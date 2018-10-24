@@ -1,0 +1,36 @@
+/* pages/category/category.wxss */
+.container{
+  margin: 0 5px;
+}
+.name{
+  font-size: 20px;
+  font-weight: 700;
+}
+.head .ul .li{
+  width: 50%;
+  padding: 5px 0;
+  display: inline-block;
+  background-color: blanchedalmond;
+  box-sizing: border-box;
+  /* 宽高包括内边距和边框 */
+  border-bottom: 2px solid #fff;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+}
+.content_li{
+  margin: 5px 0;
+}
+image{
+  width: 100%;
+  display: block;
+  height: 160px;
+  border-radius: 5px;
+}
+.body{
+  /* 以下四行代码顺序不能乱 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  /* 超出4行的部分隐藏并用省略号表示 */
+}
