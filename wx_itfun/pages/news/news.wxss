@@ -1,0 +1,22 @@
+/* pages/news/news.wxss */
+.content{
+  margin: 0 10px;
+}
+.title{
+  font-size: 26px;
+  font-weight: 700;
+  margin: 10px 0;
+  color: rgb(33, 180, 206);
+}
+.news_li{
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(137, 150, 148, 0.432);
+  position: relative;
+}
+.date{
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  bottom: 3px;
+  color: rgba(18, 19, 19, 0.432)
+}
