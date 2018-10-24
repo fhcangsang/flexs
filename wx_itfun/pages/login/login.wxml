@@ -1,0 +1,21 @@
+<!--pages/login/login.wxml-->
+<view class='head'>
+  <view class='{{select==1?"select":""}}' bindtap='click_registered'>注册</view>
+  <view class='{{select==1?"":"select"}}' bindtap='click_login'>登录</view>
+</view>
+<swiper current='{{current}}'>
+  <swiper-item>
+    <form bindsubmit='registered'>
+      <input class='username' name="username" placeholder='用户名'></input>
+      <input class='password' name="password" placeholder='密码'></input>
+      <button class='registered' form-type='submit'>注册</button>
+    </form>
+  </swiper-item>
+  <swiper-item>
+    <form bindsubmit='login'>
+      <input class='username' name="username" placeholder='用户名'></input>
+      <input class='password' name="password" placeholder='密码'></input>
+      <button class='login' form-type='submit'>登录</button>
+    </form>
+  </swiper-item>
+</swiper>
