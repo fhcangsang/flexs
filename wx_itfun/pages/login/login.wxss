@@ -1,0 +1,39 @@
+/* pages/login/login.wxss */
+input{
+  width: 80%;
+  height: 40px;
+  border: 1px solid greenyellow;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+button{
+  width: 80%;
+  background-color:coral;
+  color: #fff;
+}
+.username{
+  margin-top: 50px;
+}
+.head{
+  width: 90%;
+  margin: 10px auto;
+}
+.head > view{
+  display: inline-block;
+  box-sizing: border-box;
+  width: 50%;
+  background-color: rgb(129, 172, 189);
+  text-align: center;
+  font-size: 26px;
+  color: #fff;
+}
+.head .select{
+  background-color: greenyellow;
+  border: 1px solid red;
+}
+swiper{
+  height: 300px;
+}
+swiper-item{
+  height: 300px;
+}
