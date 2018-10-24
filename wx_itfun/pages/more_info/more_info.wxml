@@ -1,0 +1,2 @@
+<!--pages/more_info/more_info.wxml-->
+<web-view src="{{web_view}}"></web-view>
