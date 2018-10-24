@@ -1,0 +1,19 @@
+<!--pages/category/category.wxml-->
+<view class='container'>
+  <view class='head'>
+    <view class='ul'>
+      <view class='li' wx:for="{{category}}" wx:key="{{item.id}}" data-hi="{{item.slug}}" bindtap='click'>
+        <view class='name'>{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='content_li' wx:for="{{courses}}" wx:key="{{item.id}}">
+      <view class='photo'>
+        <image src='{{item.photo}}'></image>
+      </view>
+      <view class='name'>{{item.name}}</view>
+      <view class='body'>{{item.body}}</view>
+    </view>
+  </view>
+</view>
