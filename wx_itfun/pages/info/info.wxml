@@ -1,0 +1,35 @@
+<!--pages/info/info.wxml-->
+<view class='container'>
+  <view class='course'>
+    <view class='photo'>
+      <image src='{{courses.photo}}'></image>
+    </view>
+    <view class='name'>{{courses.name}}</view>
+    <view class='body'>{{courses.body}}</view>
+  </view>
+  <view class='chapters'>
+    <view class='chapters_li' wx:for="{{chapters}}" wx:for-index="key" wx:key="id">
+      <view class='left'>{{key + 1}}</view>
+      <view class='right'>
+        <view class='title'>{{item.title}}</view>
+        <view class='date'>{{item.updated_at}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='teacher'>
+    <view class='photo'>
+      <image src='{{teacher.avatar}}'></image>
+    </view>
+    <view class='name'>{{teacher.fullname}}</view>
+    <view class='company'>{{teacher.company}}</view>
+  </view>
+  <view class='relation_courses'>
+    <view class='name'>相关课程</view>
+    <view class='relation_li' wx:for="{{relation_courses}}" wx:key="{{item.id}}">
+      <view class='photo'>
+        <image src='{{item.photo}}'></image>
+      </view>
+      <view class='title'>{{item.title}}</view>
+    </view>
+  </view>
+</view>
