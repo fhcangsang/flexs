@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<view class='nav_left'>
+  <view wx:for="{{category}}" wx:key="id" bindtap='floor1' data-index="{{index}}" class='{{index==idx?"select":""}}'>{{item}}</view>
+  <view class='make_icon' bindtap='saoma'>
+    <image src='../../pages/images/saoma.png'></image>
+  </view>
+  <view class='cart_icon' bindtap='cart_icon'>
+    <view class='number {{count.num>0?"display":""}}'>{{count.num}}</view>
+    <image src='../../pages/images/cart.png'></image>
+  </view>
+</view>
+<view class='right'>
+  <view class='product_li' wx:for="{{cate_product}}" wx:key="id" wx:for-item="product" bindtap='product_li' data-id="{{product.id}}">
+    <view wx:for="{{carts}}" wx:key="id" class='number {{product.id==item.product_id?"number_display":""}}'>{{item.num}}</view>
+    <view class='photo'>
+      <image src='{{product.image}}'></image>
+    </view>
+    <view class='info'>
+      <view class='name'>{{product.name}}</view>
+      <view class='price'>{{product.price}}</view>
+    </view>
+  </view>
+</view>
+<view class='bottom_carts {{carts_class?"carts_class":""}}'>
+<view class='erro {{count.num==0?"none":""}}'>购物车还没有东西哦！</view>
+  <view class='head'>
+    <view class='left'>已购商品</view>
+    <view class='delete_icon' bindtap='cart_delete'>
+      <image src='../images/delete.jpg'></image>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='content_product' wx:for="{{carts}}" wx:key="id">
+      <view class='name'>{{item.product.name}}</view>
+      <view class='reduce' bindtap='change_num' data-id="{{item.id}}" data-type="dec">-</view>
+      <view class='num'>{{item.num}}</view>
+      <view class='add' bindtap='change_num' data-id="{{item.id}}" data-type="add">+</view>
+      <view class='price'>￥{{item.product.price}}</view>
+    </view>
+  </view>
+  <view class='foot'>
+    <view class='icon'>
+      <image src='../images/cart.png'></image>
+    </view>
+    <view class='price'> ￥{{count.total_price}}</view>
+    <view class='submit'>提交订单</view>
+  </view>
+</view>
+<view class='cover {{cover_class?"cover_class":""}}' bindtap='cover_click'></view>
