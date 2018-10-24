@@ -1,0 +1,45 @@
+charset:字符集--------------<meta charset="utf-8">（设置编码为中文简体字）
+utf-8：中文简体字
+target：目标----------------<a href="http://www.baidu.com" target="_blank">（打开连接网页时另起一页）
+blank：空白
+width：宽
+height：高
+table：表格
+border：边框
+ul：无序列表
+ol：有序列表
+li：列表项目
+radio：单选按钮
+checkbox：复选框
+select：选择---下拉选项
+option：选项---------<select><option></option></select>
+textarea:文本域
+rows：行数
+cols：列数
+submit：提交
+placeholder：占位符---------输入框中的提示文字
+reset：重置
+link:链接
+input：输入
+type：类型
+stylesheet：样式表
+margin:外边框
+padding：内边框
+float：浮动
+position：relative----相对定位
+position：absolute----绝对定位
+z-index：1-------设置层级为1
+text-indent:2em------首行缩进两字符
+text-align:center------居中对其
+background-position：背景图片位置
+auto:自适应
+div常用命名：（container：容器；head；nav：导航；main：主要；content：内容；flash：图；about：关于；title：标题；info：信息；notice：通知；footer：页脚；）
+outline:none;------去除轮廓
+display:显示------display：block显示为块级元素；display：none不显示；
+opacity:不透明度
+cursor：光标----------------cursor：pointer--------鼠标放上去变成手
+border-radius：30px;---------------边框边角变圆
+length:长度-------------if($(".name").val().length < 6)----------如果name的val的字符长度小于6
+html的注释：  <!-- 123456 -->
+css的注释：/* 123456 */
+js的注释：//123456
