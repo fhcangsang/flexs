@@ -1,0 +1,8 @@
+<!--pages/news/news.wxml-->
+<view class='content'>
+  <view class='title'>新闻</view>
+  <view class='news_li' wx:for="{{news}}" wx:key="id">
+    <view class='name'>{{item.name}}</view>
+    <view class='date'>{{item.created_at}}</view>
+  </view>
+</view>
