@@ -1,0 +1,59 @@
+<!--index.wxml-->
+<view class='container'>
+  <view class='nav_head'>
+    <navigator url='../news/news' class='news'><image src='../images/003.jpg' style='width:20px;height:20px;'></image></navigator>
+    <navigator url='../more/more' class='more'>···</navigator>
+  </view>
+  <view class='head'>首页</view>
+  <view class='content'>
+    <view class='slide'>
+      <view class='title'>推荐课程</view>
+      <swiper class='ul' indicator-dots="true" autoplay="true" interval="2000" duration="1000" circular="true">
+        <view wx:for="{{slide_courses}}" wx:key="{{item.id}}">
+          <swiper-item class='photo'>
+            <image src='{{item.photo}}'></image>
+            <navigator url='../info/info?id={{item.id}}' class='name'>{{item.name}}</navigator>
+            <navigator url='../info/info?id={{item.id}}' class='desc'>{{item.desc}}</navigator>
+            <view class='date'>{{item.created_at}}</view>
+          </swiper-item>
+        </view>
+      </swiper>
+    </view>
+    <view class='new'>
+      <view class='title'>课程发布日历</view>
+      <view class='ul'>
+        <view class='li' wx:for="{{new_courses}}" wx:key="{{item.id}}">
+          <navigator url='../info/info?id={{item.id}}' class='photo'>
+            <image src='{{item.photo}}'></image>
+          </navigator>
+          <navigator url='../info/info?id={{item.id}}' class='name'>{{item.name}}</navigator>
+          <navigator url='../info/info?id={{item.id}}' class='date'>{{item.created_at}}</navigator>
+        </view>
+      </view>
+    </view>
+    <view class='like'>
+      <view class='title'>最喜欢的课程</view>
+      <view class='ul'>
+        <view class='li' wx:for="{{likes_courses}}" wx:key="{{item.id}}">
+          <navigator url='../info/info?id={{item.id}}' class='photo'>
+            <image src='{{item.photo}}'></image>
+          </navigator>
+          <navigator url='../info/info?id={{item.id}}' class='name'>{{item.name}}</navigator>
+          <navigator url='../info/info?id={{item.id}}' class='date'>{{item.created_at}}</navigator>
+        </view>
+      </view>
+    </view>
+    <view class='recommend'>
+      <view class='title'>入门课程</view>
+      <view class='ul'>
+        <view class='li' wx:for="{{recommended_courses}}" wx:key="{{item.id}}">
+          <navigator url='../info/info?id={{item.id}}' class='photo'>
+            <image src='{{item.photo}}'></image>
+          </navigator>
+          <navigator url='../info/info?id={{item.id}}' class='name'>{{item.name}}</navigator>
+          <navigator url='../info/info?id={{item.id}}' class='date'>{{item.created_at}}</navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
