@@ -1,0 +1,13 @@
+<!--pages/lesson/lesson.wxml-->
+<view class='container'>
+  <view class='head'>课程日历</view>
+  <view class='content'>
+  <view class='content_li' wx:for="{{lesson}}" wx:key="{{item.id}}">
+  <view class='date'>{{item.created_at}}</view>
+  <view class='photo'>
+  <image src='{{item.photo}}'></image>
+  </view>
+  <view class='name'>{{item.name}}</view>
+  </view>
+  </view>
+</view>
