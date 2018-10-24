@@ -1,0 +1,43 @@
+/* pages/info/info.wxss */
+.container{
+  margin: 0 10px;
+}
+.container > view{
+  margin: 20px 0;
+  padding-bottom: 15px; 
+}
+image{
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+}
+.name{
+  font-size: 24px;
+  font-weight: 700;
+}
+.teacher .photo{
+  width: 20%;
+}
+.teacher .photo image{
+  height: 60px;
+}
+.chapters_li{
+  margin-bottom: 10px;
+  background-color: rgb(222, 247, 199);
+  border-radius: 5px;
+  display: -webkit-flex;
+  align-items: center;
+}
+.chapters_li .left{
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+}
+.chapters_li .right{
+  display: inline-block;
+  width: 80%;
+}
+.relation_li .title{
+  text-align: center;
+  margin: 10px 0;
+}
