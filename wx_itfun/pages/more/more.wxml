@@ -1,0 +1,17 @@
+<!--pages/more/more.wxml-->
+<view>
+  <navigator url='../more_info/more_info?url={{teacher}}'>讲师一览</navigator>
+</view>
+<view>
+  <navigator url='../more_info/more_info?url={{about}}'>关于我们</navigator>
+</view>
+<view>
+  <navigator url='../more_info/more_info?url={{member}}'>ITFUN会员</navigator>
+</view>
+<view>
+  <navigator url='../more_info/more_info?url={{problem}}'>常见问题</navigator>
+</view>
+<view>
+  <navigator open-type="switchTab" url='../index/index'>退出</navigator>
+  <!-- 跳转到tabBar页面要加open-type="switchTab"属性 -->
+</view>
