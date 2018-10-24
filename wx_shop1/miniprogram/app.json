@@ -1,0 +1,12 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": "货架",
+    "navigationBarTextStyle": "white"
+  }
+}
