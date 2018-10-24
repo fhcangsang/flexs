@@ -1,0 +1,63 @@
+/**index.wxss**/
+.container{
+  margin: 0 10px;
+}
+.head{
+  font-size: 24px;
+  color: rgb(16, 193, 216);
+  padding-top: 10px 0;
+  font-weight: 700;
+}
+image{
+  width: 100%;
+  display: block;
+  height: 160px;
+  border-radius: 10px;
+}
+.title{
+  padding: 5px 0;
+  font-weight: 600;
+}
+.date{
+  font-size: 12px;
+  color: greenyellow;
+}
+.ul{
+  text-align: center;
+  overflow: auto;
+  white-space: nowrap;
+}
+.ul::-webkit-scrollbar{
+  display: none;
+  /* 自定义滚动条的伪对象选择器::-webkit-scrollbar */
+  /* 隐藏滚动条 */
+}
+.ul .li{
+  display: inline-block;
+  width: 70%;
+  margin-right: 10px;
+}
+.slide .ul .li{
+  width: 100%;
+}
+.content > view{
+  margin: 10px 0;
+}
+swiper{
+  height: 250px;
+}
+.nav_head{
+  height: 21px;
+  background-color: rgba(194, 197, 183, 0.089);
+  color: rgb(157, 193, 247);
+  padding: 5px 0;
+  margin: 10px 0;
+}
+.nav_head .news{
+  float: left;
+  padding: 0 10px;
+}
+.nav_head .more{
+  float: right;
+  padding: 0 10px;
+}
