@@ -1,0 +1,4 @@
+<!--pages/my/my.wxml-->
+<view class='name'>姓名： {{user.fullname}}</view>
+<view class='email'>邮箱： {{user.email}}</view>
+<view class='sex'>性别： {{user.sex==1?"男":"女"}}</view>
