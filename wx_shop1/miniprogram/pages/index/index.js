@@ -172,5 +172,44 @@ Page({
       fail: function(res) {},
       complete: function(res) {},
     })
+  },
+  //支付；
+  pay:function(){
+    if(this.data.count.num == 0){
+      return
+    }
+    wx.request({
+      url: 'https://canteen.canon4ever.com/api/order/pay',
+      header: {
+        "Authorization": this.data.token
+      },
+      method: 'GET',
+      success: function(res) {
+        let that = this
+        wx.requestPayment({
+          timeStamp: res.data.timestamp,
+          nonceStr: res.data.nonceStr,
+          package: res.data.package,
+          signType: res.data.signType,
+          paySign: res.data.paySign,
+          success: (res)=>{
+            that.setData({
+              carts: [],
+              cart_nums: [],
+              count: {
+                num: 0,
+                total_price: 0
+              }
+            })
+          },
+          fail: function(res) {
+            console.log(res)
+          }
+        })
+      },
+      complete: function(res) {
+        
+      }
+    })
   }
 })
