@@ -64,16 +64,20 @@ image{
 }
 .make_icon{
   margin: 15px;
-  margin-top: 100px; 
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
 }
 .make_icon image{
-  border-radius: 50%;
-  height: 150rpx;
+  height: 100rpx;
+  width: 100rpx;
 }
 .cart_icon{
   margin: 15px;
   margin-top: 0px; 
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 .cart_icon .number{
   position: absolute;
@@ -82,7 +86,7 @@ image{
   background-color: red;
   color: #fff;
   width: 22px;
-  height: 3px;
+  height: 4px;
   border-radius: 50%;
   text-align: center;
   line-height: 3px;
@@ -94,8 +98,8 @@ image{
   display: block;
 }
 .cart_icon image{
-  border-radius: 50%;
-  height: 150rpx;
+  height: 100rpx;
+  width: 100rpx;
 }
 .bottom_carts{
   width: 100%;
@@ -199,18 +203,16 @@ image{
   color: red;
 }
 .bottom_carts .foot .icon image{
-  width: 50px;
-  height: 50px;
-  position: relative;
-  top: -11px;
-  left: -13px;
+  width: 25px;
+  height: 25px;
 }
 .bottom_carts .foot .submit{
   float: right;
-  margin-right: 3px;
   color: #fff;
   background-color: black;
   padding: 5px;
+  height: 35px;
+  box-sizing: border-box;
 }
 .cover{
   width: 100%;
