@@ -43,7 +43,7 @@
       <image src='../images/cart.png'></image>
     </view>
     <view class='price'> ￥{{count.total_price}}</view>
-    <view class='submit'>提交订单</view>
+    <view class='submit' bindtap='pay'>提交订单</view>
   </view>
 </view>
 <view class='cover {{cover_class?"cover_class":""}}' bindtap='cover_click'></view>
