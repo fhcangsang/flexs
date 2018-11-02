@@ -23,4 +23,13 @@ Route::namespace('Api')->group(function () {
     //首页
     $this->get('/', 'HomeController@index');
 
+    //商品、分类
+    Route::prefix('product')->group(function () {
+        //分类
+        $this->get('category', 'ProductController@category');
+
+        //商品详情
+        $this->get('{id}', 'ProductController@show');
+
+    });
 });
