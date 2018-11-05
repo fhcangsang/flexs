@@ -1,0 +1,812 @@
+*{margin: 0;padding: 0;}
+ul{list-style-type: none;}
+a{text-decoration: none;}
+.head{
+  float: left;
+  width: 100%;
+  .nav_top{
+    float: left;
+    width: 100%;
+    background-color: #545652;
+    font-size: 12px;
+    .left{
+      float: left;
+      ul{
+        float: left;
+        li{
+          float: left;
+          a,a:active{
+            color: #d5d5d5;
+            padding: 6px 12px;
+            display: block;
+          }
+          a:hover{color: #fff;}
+        }
+      }
+    }
+    .right{
+      float: right;
+      ul{
+        float: right;
+        li:first-child{
+          margin-right: 10px;
+        }
+        li{
+          float: right;
+
+          a,a:active{
+            color: #d5d5d5;
+            padding: 6px 12px;
+            display: block;
+          }
+          a:hover{color: #fff;}
+        }
+        .secand{
+          border-left: 1px solid dodgerblue;
+          border-right: 1px solid dodgerblue;
+        }
+      }
+    }
+  }
+  .middle {
+    float: left;
+    width: 100%;
+    height: 75px;
+    background-color: #f0f3f5;
+    border-bottom: 1px solid #e3ebec;
+    .content {
+      float: left;
+      width: 1040px;
+      margin: 0 142px;
+      padding: 10px 0 5px 0;
+      .movie_img {
+        float: left;
+        a {
+          background-image: url("../img/01.png");
+          width: 145px;
+          height: 56px;
+          display: block;
+          background-size: 120px 28px;
+          background-repeat: no-repeat;
+          background-position: 0 12px;
+          text-indent: -10000px;
+        }
+      }
+      .search {
+        float: left;
+        padding: 11px 0;
+        .search_input {
+          width: 400px;
+          height: 34px;
+          border: none;
+          float: left;
+          border-bottom: 1px solid #d5d5d5;
+          border-radius: 3px;
+        }
+        .search_img {
+          float: left;
+          width: 37px;
+          height: 34px;
+          input {
+            width: 100%;
+            height: 100%;
+            font-size: 0;
+            background-image: url("../img/02.png");
+            background-position: 0 -39px;
+            border: none;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .nav_bottom{
+    float: left;
+    width: 100%;
+    height: 40px;
+    background-color: #f0f3f5;
+    .content {
+      float: left;
+      width: 1040px;
+      margin: 0 142px;
+      padding: 10px 0 5px 0;
+      ul{
+        float: left;
+        li{
+          float: left;
+          margin-right: 25px;
+          a,a:active{
+            color: #27a;
+            font-size: 13px;
+          }
+          a:hover{
+            background-color: #2277aa;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}//头部导航
+.ad_foot{
+  color: #fff;
+  background-color: black;
+  font-size: 13px;
+  width: 28px;
+  opacity: 0.6;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}//广告角标
+.content{
+  float: left;
+  width: 1050px;
+  margin:0 142px;
+  .left{
+    width: 650px;
+    float: left;
+    .newMovie{
+      float: left;
+      .top{
+        width: 650px;
+        float: left;
+        margin-top: 30px;
+        padding: 10px 0;
+        border-bottom: 1px solid #eaeaea;
+        margin-bottom: 15px;
+        span{
+          margin-right: 5px;
+          a,a:active{
+            color: #27a;
+            font-size: 13px;
+            span{font-size: 5px;}
+          }
+          a:hover{
+            background-color: #2277aa;
+            color: #fff;
+          }
+        }
+        .right{
+          float: right;
+          .btn{
+            float: right;
+            span{font-size: 14px;
+              color: #fff;
+              background-color: dodgerblue;
+              padding: 2px 6px;
+              display: inline-block;
+              border-radius: 35px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .bottom{
+        width: 650px;
+        float: left;
+        overflow: hidden;
+        ul{
+          float: left;
+          width: 10000px;
+          li{
+            float: left;
+            width: 116px;
+            height: 250px;
+            font-size: 14px;
+            margin-right: 62px;
+            position: relative;
+            left: -712px;
+            div{
+              padding: 5px;
+              margin: 0 auto;
+              text-align: center;
+              &:first-child{padding: 0;}
+            }
+            .img{
+              a{
+                img{
+                  width: 114px;
+                  height: 160px;
+                  display: block;
+                }
+                .about{
+                  width: 100px;
+                  height: 120px;
+                  background-color: bisque;
+                  position: absolute;
+                  top: 0;
+                  left: 120px;
+                  z-index: 2;
+                  display: none;
+                }
+              }
+              a:hover{.about{display: block;};}
+            }
+            .title{
+              a{
+                color: #000;
+              }
+            }
+            .score{
+              width: 80px;
+              height: 12px;
+              padding: 0;
+              background-image: url("../img/07.png");
+              background-repeat: no-repeat;
+              overflow: hidden;
+              background-position: 0 1px;
+              span{
+                float: right;
+                font-size: 8px;
+                color: orangered;
+                position: relative;
+                top: -2px;
+              }
+            }
+            .ticket{
+              a{
+                color: #fff;
+                background-color: #2277aa;
+                border-radius: 8px;
+                padding: 5px 8px;
+                display: inline-block;
+              }
+            }
+          }
+        }
+      }
+    }//最新电影
+    .ad_left_one{
+      float: left;
+      margin-top: 25px;
+      position: relative;
+      a{
+        img{
+          width: 650px;
+        }
+      }
+    }//左侧第一个广告
+    .recentMovie{
+      float: left;
+      .top{
+        width: 650px;
+        float: left;
+        margin-top: 30px;
+        padding: 5px 0;
+        border-bottom: 1px solid #eaeaea;
+        margin-bottom: 15px;
+        ul{
+          width: 650px;
+          float: left;
+          li{
+            float: left;
+            padding: 5px 10px;
+            font-size: 13px;
+            &:first-child{padding: 2px 0;font-size: 18px;}
+            &:last-child{float: right;}
+            a,a:active{
+              color: #545652;
+              font-size: 13px;
+              &:hover{
+                background-color: #2277aa;
+                color: #fff;
+              }
+            }
+            .last_a{color: #2277aa;}
+          }
+        }
+      }
+      .bottom{
+        width: 650px;
+        float: left;
+        overflow: hidden;
+        .ul_main{
+          float: left;
+          width: 10000px;
+          li{
+            float: left;
+            width: 116px;
+            height: 200px;
+            font-size: 14px;
+            margin-right: 62px;
+            position: relative;
+            left: -712px;
+            a{
+              div{
+                padding: 5px;
+                margin: 0 auto;
+                text-align: center;
+                span{
+                  color: orangered;
+                }
+                .title{
+                  color: #2277aa;
+                  margin-right: 5px;
+                }
+              }
+              img{
+                width: 114px;
+                height: 160px;
+                display: block;
+              }
+            }
+          }
+        }
+        .btn_two{
+          float: left;
+          width: 650px;
+          .ul_btn{
+            float: left;
+            margin-left: 256px;
+            li{
+              float: left;
+              cursor: pointer;
+            }
+            .prev{
+              color: #fff;
+              background-color: #2277aa;
+              border-radius: 30px;
+              padding: 0 5px;
+            }
+            .next{
+              color: #fff;
+              background-color: #2277aa;
+              border-radius: 30px;
+              padding: 0 5px;
+            }
+            .point{
+              width: 6px;
+              height: 6px;
+              background-color: #d5d5d5;
+              border-radius: 50%;
+              margin: 8px;
+            }
+            .blue{background-color: #2277aa}
+          }
+        }
+      }
+    }//最近电影
+    .recentTV{
+      float: left;
+      .top{
+        width: 650px;
+        float: left;
+        margin-top: 30px;
+        padding: 5px 0;
+        border-bottom: 1px solid #eaeaea;
+        margin-bottom: 15px;
+        ul{
+          width: 650px;
+          float: left;
+          li{
+            float: left;
+            padding: 5px 10px;
+            font-size: 13px;
+            &:first-child{padding: 2px 0;font-size: 18px;}
+            &:last-child{float: right;}
+            a,a:active{
+              color: #545652;
+              font-size: 13px;
+              &:hover{
+                background-color: #2277aa;
+                color: #fff;
+              }
+            }
+            .last_a{color: #2277aa;}
+          }
+        }
+      }
+      .bottom{
+        width: 650px;
+        float: left;
+        overflow: hidden;
+        .ul_main{
+          float: left;
+          width: 10000px;
+          li{
+            float: left;
+            width: 116px;
+            height: 200px;
+            font-size: 14px;
+            margin-right: 62px;
+            position: relative;
+            left: -712px;
+            a{
+              div{
+                padding: 5px;
+                margin: 0 auto;
+                text-align: center;
+                span{
+                  color: orangered;
+                }
+                .title{
+                  color: #2277aa;
+                  margin-right: 5px;
+                }
+              }
+              img{
+                width: 114px;
+                height: 160px;
+                display: block;
+              }
+            }
+          }
+        }
+        .btn_two{
+          float: left;
+          width: 650px;
+          .ul_btn{
+            float: left;
+            margin-left: 256px;
+            li{
+              float: left;
+              cursor: pointer;
+            }
+            .prev{
+              color: #fff;
+              background-color: #2277aa;
+              border-radius: 30px;
+              padding: 0 5px;
+            }
+            .next{
+              color: #fff;
+              background-color: #2277aa;
+              border-radius: 30px;
+              padding: 0 5px;
+            }
+            .point{
+              width: 6px;
+              height: 6px;
+              background-color: #d5d5d5;
+              border-radius: 50%;
+              margin: 8px;
+            }
+            .blue{background-color: #2277aa}
+          }
+        }
+      }
+    }//最近电视
+    .hotRecommend{
+      float: left;
+      .top{
+        width: 650px;
+        float: left;
+        margin-top: 30px;
+        padding: 10px 0;
+        border-bottom: 1px solid #eaeaea;
+        margin-bottom: 15px;
+        .right{
+          float: right;
+          .btn{
+            float: right;
+            span{font-size: 14px;
+              color: #fff;
+              background-color: dodgerblue;
+              padding: 2px 6px;
+              display: inline-block;
+              border-radius: 35px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .info{
+        float: left;
+        width: 650px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        ul{
+          float: left;
+          width: 7000px;
+          li{
+            float: left;
+            .left{
+              width: 350px;
+              float: left;
+              img{
+                width: 350px;
+              }
+            }
+            .right{
+              float: right;
+              width: 270px;
+              height: 210px;
+              padding: 15px;
+              background-color: #f0f3f5;
+              a{
+                margin: 30px 0 15px 0;
+                display: block;
+                font-size: 18px;
+                color: black;
+              }
+              div{
+                font-size: 13px;
+                color: #545652;
+                opacity: 0.6;
+              }
+            }
+            position: relative;
+            left: -650px;
+          }
+        }
+      }
+    }//热门推荐
+    .review{
+      .top{
+        width: 650px;
+        float: left;
+        margin-top: 30px;
+        padding: 10px 0;
+        border-bottom: 1px solid #eaeaea;
+        margin-bottom: 15px;
+        span{
+          a,a:active{
+            color: #27a;
+            &:hover{
+              background-color: #2277aa;
+              color: #fff;
+            }
+            span{font-size: 5px;}
+          }
+        }
+      }
+      .info{
+        li{
+          float: left;
+          width: 650px;
+          height: 135px;
+          border-bottom: 1px solid #eaeaea;
+          margin-bottom: 10px;
+          .main{
+            float: right;
+            width: 560px;
+            .title{
+              padding-bottom:5px;
+              a,a:active{
+                color: #27a;
+                font-size: 13px;
+                &:hover{
+                  background-color: #2277aa;
+                  color: #fff;
+                }
+              }
+            }
+            .person{
+              color: #545652;
+              font-size: 13px;
+              a,a:active{
+                color: #545652;
+                font-size: 13px;
+                &:hover{
+                  background-color: #2277aa;
+                  color: #fff;
+                }
+              }
+            }
+            p{
+              font-size: 14px;
+              line-height: 20px;
+              padding: 10px 0;
+            }
+          }
+          img{
+            width: 80px;
+            height: 100px;
+          }
+        }
+      }
+    }//影评
+  }//左侧内容
+  .right_info{
+    float: right;
+    width: 320px;
+    margin-top: 30px;
+    .top{
+      width: 300px;
+      background-color: #f0f3f5;
+      padding: 10px;
+      a,a:active{
+        color: #27a;
+        font-size: 13px;
+        &:hover{
+          background-color: #2277aa;
+          color: #fff;
+        }
+      }
+    }
+    .ad_one{
+      width: 320px;
+      margin: 20px 0;
+      position: relative;
+      a{
+        img{
+          width: 320px;
+        }
+      }
+    }//第一个广告
+    .movie_active{
+      width: 300px;
+      margin: 20px 0;
+      padding: 10px;
+      background-color: #f0f3f5;
+      .head{
+        color: green;
+        padding: 10px 0;
+      }
+      ul{
+        li{
+          padding: 5px 0;
+          a,a:active{
+            color: #27a;
+            font-size: 13px;
+            &:hover{
+              background-color: #2277aa;
+              color: #fff;
+            }
+          }
+          }
+        }
+      }//电影活动
+    .praise_list{
+      width: 320px;
+      margin-top: 20px;
+      ul{
+        margin: 10px 0;
+        li{
+          padding: 8px 0;
+          border-bottom: 1px solid #d5d5d5;
+          span{
+            margin-right: 8px;
+            font-size: 13px;
+          }
+          .first{
+            font-size: 18px;
+            margin-right: 20px;
+          }
+          .last{
+            margin-right: 4px;
+          }
+          a,a:active{
+            color: #27a;
+            font-size: 13px;
+            &:hover{
+              background-color: #2277aa;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }//口碑榜
+    .ad_two{
+      width: 320px;
+      margin: 20px 0;
+      position: relative;
+      a{
+        img{
+          width: 320px;
+        }
+      }
+    }//第二个广告
+    .hot{
+      ul{
+        li{
+          font-size: 13px;
+          padding: 10px 0;
+          border-bottom: 1px solid #d5d5d5;
+          position: relative;
+          &:first-child{font-size: 18px;}
+          span{
+            color: #545652;
+            opacity: 0.7;
+            position: absolute;
+            right: 0;
+          }
+          a,a:active {
+            color: #27a;
+            &:hover {
+              background-color: #2277aa;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }//热门豆列
+    .mailbox{
+      margin-top: 20px;
+      .head_ml{
+        border-bottom: 1px solid #d5d5d5;
+        padding: 10px 0;
+        }
+      div{
+        font-size: 13px;
+        padding-top: 10px;
+        &:first-child{font-size: 18px;}
+      }
+    }//合作联系
+    .about_us{
+      float: left;
+      .ab_top{
+        border-bottom: 1px solid #d5d5d5;
+        padding: 30px 0 10px 0;
+      }
+      ul{
+        float: left;
+        li{
+          float: left;
+          text-align: center;
+          width: 40px;
+          padding: 12px;
+          span{
+            a,a:active{
+              color: #27a;
+              font-size: 13px;
+              &:hover{
+                background-color: #2277aa;
+                color: #fff;
+              }
+            }
+          }
+          img{
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+    }//关于我们
+    .dbLife{
+      float: left;
+      width: 300px;
+      padding: 10px;
+      height: 80px;
+      background-color: #f0f3f5;
+      margin-top: 20px;
+      div{float: left;
+        margin-right: 10px;
+        img{
+          width: 96px;
+          height: 80px;
+        }
+      }
+      >a{
+        font-size: 13px;
+        color: #2277aa;
+        display: inline-block;
+        margin: 10px 0;
+      }
+      span{font-size: 13px;
+        color: #545652;
+        opacity: 0.6;
+      }
+    }//豆瓣生活
+    }//右侧信息
+  }//内容主体
+.footer{
+  width: 1040px;
+  float: left;
+  margin: 40px 142px 10px 142px;
+  padding-top: 10px;
+  border-top: 1px dashed #d5d5d5;
+  div{
+    float: left;
+    font-size: 12px;
+    color: #545652;
+    opacity: 0.8;
+  }//左侧文字
+  ul{
+    float: right;
+    li{
+      float: left;
+      font-size: 12px;
+      a,a:active {
+        color: #27a;
+        margin: 0 5px;
+        &:hover {
+          background-color: #2277aa;
+          color: #fff;
+        }
+      }
+    }
+  }//右侧导航
+}
+
+
