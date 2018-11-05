@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background-color: #F9F9F9; }
+
+a {
+  text-decoration: none;
+  color: gray;
+  padding: 10px 30px;
+  border: 3px solid #fff; }
+  a:hover {
+    background-color: black;
+    color: #fff; }
+
+.container {
+  width: 1000px;
+  margin: 0 auto; }
+  .container .head {
+    width: 1000px;
+    height: 44px;
+    margin: 80px 0; }
+    .container .head .left {
+      float: left; }
+    .container .head .right {
+      float: right; }
+      .container .head .right img {
+        margin: 0 10px; }
+  .container .content {
+    width: 1000px; }
+    .container .content .tr {
+      float: left;
+      width: 1000px;
+      margin-bottom: 35px; }
+      .container .content .tr .box {
+        width: 480px;
+        border: 1px solid #B8B8B8;
+        border-radius: 10px;
+        overflow: hidden; }
+        .container .content .tr .box .img {
+          float: left;
+          width: 300px;
+          position: relative; }
+          .container .content .tr .box .img:hover img {
+            filter: blur(1px); }
+          .container .content .tr .box .img:hover p {
+            display: block; }
+          .container .content .tr .box .img p {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 700;
+            position: absolute;
+            top: 130px;
+            left: 110px;
+            display: none; }
+          .container .content .tr .box .img img {
+            cursor: pointer; }
+        .container .content .tr .box .right {
+          float: right;
+          width: 180px;
+          height: 300px;
+          font-size: 13px;
+          color: gray;
+          text-align: center;
+          background-color: #F3F3F3;
+          position: relative; }
+          .container .content .tr .box .right .title {
+            background-color: #fff;
+            width: 130px;
+            margin: 20px auto; }
+          .container .content .tr .box .right .info {
+            padding: 0 15px; }
+          .container .content .tr .box .right .more {
+            position: absolute;
+            bottom: 20px;
+            left: 30px; }
+      .container .content .tr .box_left {
+        float: left; }
+      .container .content .tr .box_right {
+        float: right; }
+
+/*# sourceMappingURL=indexStyle.css.map */
