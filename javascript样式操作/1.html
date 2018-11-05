@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        #a{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+
+<div id="a"></div>
+<button id="d">点我</button>
+<button id="x">X</button>
+<button class="test">test</button>
+
+<script>
+    var d = document.getElementById("d");
+    var a = document.getElementById("a");
+    var x = document.getElementById("x");
+    var test = document.getElementsByClassName("test")[0];
+    d.onclick = function(){
+        a.style.width = "200px";
+        a.style.height = "200px";
+    }
+    x.onclick = function(){
+        a.style.display = "none";
+        x.style.display = "none";
+    }
+    test.onclick = function () {
+        alert(123);
+    }
+
+</script>
+</body>
+</html>
