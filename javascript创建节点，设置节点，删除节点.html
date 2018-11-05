@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form action="">
+    <textarea name="" id="form" cols="30" rows="10"></textarea>
+</form>
+    <button id="btn">添加</button>
+<ul id="dome">
+</ul>
+
+<script>
+    var form = document.getElementById("form");
+    var btn = document.getElementById("btn");
+    var ul = document.getElementById("dome");
+    btn.onclick = function () {
+        var li = document.createElement("li");
+        li.innerHTML = form.value + "<a href='javascript:'>删除</a>";
+        //ul.appendChild(li);
+        //ul.insertBefore(li,null);
+        ul.insertBefore(li,ul.children[0]);
+        form.value = "";
+        var a = document.getElementsByTagName("a");
+        for (var i = 0; i <a.length; i++){
+            a[i].onclick = function () {
+                ul.removeChild(this.parentNode)
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>
