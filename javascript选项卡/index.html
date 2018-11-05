@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .head{
+            height: 80px;
+        }
+        .head ul{
+            list-style: none;
+            float: left;
+            position: absolute;
+            left: 300px;
+            top: 20px;
+            width: 300px;
+            border-top: 2px solid #B8B8B8;
+
+        }
+        .head ul li {
+            float: left;
+            padding: 10px;
+            line-height: 24px;
+            position: relative;
+            top: -2px;
+        }
+        .head ul li a,.head ul li a:active{
+            text-decoration: none;
+            color: black;
+        }
+        .head ul li:first-child{
+            font-size: 24px;
+        }
+        .name{
+            border-top: 3px solid red;
+        }
+        .head ul li a:hover{
+            color: red;
+        }
+        .content {
+            position: absolute;
+            left: 300px;
+        }
+        .content div{
+            width: 300px;
+            height: 150px;
+            border: 4px solid greenyellow;
+            display: none;
+        }
+        .content .info{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="head">
+    <ul>
+        <li class="name"><a href="">体育</a></li>
+        <li><a href="">NBA</a></li>
+        <li><a href="">足球</a></li>
+    </ul>
+</div>
+<div class="content">
+    <div class="info">体育新闻</div>
+    <div>NBA新闻</div>
+    <div>足球新闻</div>
+</div>
+
+<script>
+    var li = document.getElementsByTagName("li");
+    var main = document.getElementsByClassName("content")[0].getElementsByTagName("div");//多级选择器；
+    for (var i = 0; i < 3; i++){
+        li[i].idx = i;
+        li[i].onmouseenter = function(){
+            for(var i = 0; i < 3; i++){
+                li[i].className = ""
+            }
+            this.className = "name";
+            for(var i = 0; i < 3; i++){
+                main[i].className = ""
+            }
+            main[this.idx].className = "info"
+        }
+    }
+</script>
+</body>
+</html>
