@@ -1,0 +1,167 @@
+body {
+  min-width: 980px;
+  max-width: 980px; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+a, a:active {
+  text-decoration: none;
+  color: black;
+  font-size: 32px;
+  display: inline-block;
+  margin-top: 20px;
+  height: 90px;
+  width: 100%; }
+  a span, a:active span {
+    display: inline-block;
+    margin-top: 85px; }
+
+ul {
+  list-style-type: none;
+  width: 100%;
+  height: 100%;
+  display: flex; }
+  ul li {
+    flex: 1;
+    text-align: center; }
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #e6dcdc; }
+  .container .head {
+    width: 100%; }
+    .container .head img {
+      width: 100%; }
+  .container .content {
+    width: 98%;
+    margin: 0 auto; }
+    .container .content .nav_top {
+      border-radius: 15px;
+      background-color: #fff;
+      padding: 10px;
+      margin-top: 10px; }
+      .container .content .nav_top li a {
+        background-image: url("../nav01.png");
+        background-repeat: no-repeat;
+        background-size: 90px;
+        background-position: 50px 0; }
+      .container .content .nav_top li:nth-child(2) a {
+        background-position: 50px -90px; }
+      .container .content .nav_top li:nth-child(3) a {
+        background-position: 50px -180px; }
+      .container .content .nav_top li:nth-child(4) a {
+        background-position: 50px -270px; }
+      .container .content .nav_top li:nth-child(5) a {
+        background-position: 50px -360px; }
+    .container .content .main {
+      margin: 10px 0;
+      border-radius: 40px;
+      background-color: #fff;
+      font-size: 36px;
+      text-align: center;
+      line-height: 150px;
+      color: white; }
+      .container .content .main .hotel {
+        display: flex;
+        height: 300px;
+        border-radius: 30px 30px 0 0;
+        border-bottom: 3px solid #fff;
+        background: linear-gradient(to right, #f44336, #ecad50); }
+        .container .content .main .hotel .one {
+          background-image: url("../hotel.png");
+          background-repeat: no-repeat;
+          background-size: 300px;
+          background-position: 30px 150px; }
+        .container .content .main .hotel .two {
+          border-left: 2px solid white;
+          border-right: 2px solid white; }
+          .container .content .main .hotel .two div {
+            height: 49.5%; }
+          .container .content .main .hotel .two .top {
+            border-bottom: 3px solid white; }
+        .container .content .main .hotel .three {
+          border-left: 2px solid white;
+          border-right: 2px solid white; }
+          .container .content .main .hotel .three div {
+            height: 49.5%; }
+          .container .content .main .hotel .three .top {
+            border-bottom: 3px solid white; }
+      .container .content .main .hotel div {
+        flex: 1; }
+      .container .content .main .tickets {
+        display: flex;
+        height: 300px;
+        border-top: 3px solid #fff;
+        border-bottom: 3px solid #fff;
+        background: linear-gradient(to right, #1990ef, #61c5f3); }
+        .container .content .main .tickets .one {
+          background-image: url("../flight.png");
+          background-repeat: no-repeat;
+          background-size: 300px;
+          background-position: 30px 150px; }
+        .container .content .main .tickets .two {
+          border-left: 2px solid white;
+          border-right: 2px solid white; }
+          .container .content .main .tickets .two div {
+            height: 49.5%; }
+          .container .content .main .tickets .two .top {
+            border-bottom: 3px solid white; }
+        .container .content .main .tickets .three {
+          border-left: 2px solid white;
+          border-right: 2px solid white; }
+          .container .content .main .tickets .three div {
+            height: 49.5%; }
+          .container .content .main .tickets .three .top {
+            border-bottom: 3px solid white; }
+      .container .content .main .tickets div {
+        flex: 1; }
+      .container .content .main .trip {
+        display: flex;
+        height: 300px;
+        border-top: 3px solid #fff;
+        border-radius: 0 0 30px 30px;
+        background: linear-gradient(to right, #18d620, #c0ef8b); }
+        .container .content .main .trip .one {
+          background-image: url("../travel.png");
+          background-repeat: no-repeat;
+          background-size: 300px;
+          background-position: 30px 80px; }
+        .container .content .main .trip .two {
+          border-left: 2px solid white;
+          border-right: 2px solid white; }
+          .container .content .main .trip .two div {
+            height: 49.5%; }
+          .container .content .main .trip .two .top {
+            border-bottom: 3px solid white; }
+        .container .content .main .trip .three {
+          border-left: 2px solid white;
+          border-right: 2px solid white; }
+          .container .content .main .trip .three div {
+            height: 49.5%; }
+          .container .content .main .trip .three .top {
+            border-bottom: 3px solid white; }
+      .container .content .main .trip div {
+        flex: 1; }
+    .container .content .nav_bottom {
+      border-radius: 20px;
+      background-color: #fff;
+      padding: 10px;
+      margin-bottom: 15px; }
+      .container .content .nav_bottom li a {
+        background-image: url("../nav02.png");
+        background-repeat: no-repeat;
+        background-size: 90px;
+        background-position: 50px 0; }
+      .container .content .nav_bottom li:nth-child(2) a {
+        background-position: 50px -95px; }
+      .container .content .nav_bottom li:nth-child(3) a {
+        background-position: 50px -205px; }
+      .container .content .nav_bottom li:nth-child(4) a {
+        background-position: 50px -1030px; }
+      .container .content .nav_bottom li:nth-child(5) a {
+        background-position: 50px -315px; }
+
+/*# sourceMappingURL=cssOne.css.map */
