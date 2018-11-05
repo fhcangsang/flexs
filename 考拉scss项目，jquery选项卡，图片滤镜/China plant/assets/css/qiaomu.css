@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background-color: #F9F9F9;
+  font-size: 13px; }
+
+ul {
+  list-style-type: none; }
+
+a {
+  text-decoration: none;
+  color: gray; }
+  a:hover {
+    color: black; }
+
+.bor {
+  border-bottom: 2px solid lightblue; }
+
+.container {
+  width: 1000px;
+  margin: 0 auto; }
+  .container .head {
+    width: 1000px;
+    float: left;
+    margin: 80px 0; }
+    .container .head .left {
+      float: left; }
+    .container .head .right {
+      float: right; }
+      .container .head .right img {
+        margin: 0 10px; }
+  .container .content {
+    width: 1000px;
+    float: left; }
+    .container .content .left {
+      width: 230px;
+      padding: 0 10px;
+      float: left; }
+      .container .content .left ul li {
+        line-height: 25px;
+        margin-bottom: 30px;
+        text-align: center; }
+        .container .content .left ul li:first-child {
+          background-color: #fff;
+          width: 120px;
+          margin: 20px auto;
+          border-bottom: 3px solid #B8B8B8;
+          border-right: 3px solid #B8B8B8; }
+        .container .content .left ul li:last-child {
+          border-top: 1px solid black;
+          padding-top: 20px;
+          line-height: 30px; }
+    .container .content .right {
+      width: 730px;
+      padding: 0 10px;
+      float: right; }
+      .container .content .right > ul {
+        float: left;
+        width: 750px;
+        margin: 20px 0; }
+        .container .content .right > ul li {
+          float: left;
+          margin-right: 30px;
+          color: gray;
+          cursor: pointer; }
+          .container .content .right > ul li:hover {
+            color: black;
+            border-bottom: 1px solid #B8B8B8; }
+      .container .content .right div dl dt {
+        width: 730px;
+        float: left;
+        display: none; }
+        .container .content .right div dl dt:first-child {
+          display: block; }
+        .container .content .right div dl dt .info {
+          width: 500px;
+          padding: 20px 0;
+          line-height: 25px; }
+        .container .content .right div dl dt .images {
+          width: 730px;
+          float: left; }
+          .container .content .right div dl dt .images ul {
+            width: 720px;
+            padding: 20px 5px;
+            float: left; }
+            .container .content .right div dl dt .images ul li {
+              width: 120px;
+              float: left;
+              text-align: center; }
+              .container .content .right div dl dt .images ul li img {
+                width: 110px;
+                border: 3px solid #B8B8B8;
+                margin: 2px;
+                cursor: pointer;
+                filter: grayscale(80%); }
+                .container .content .right div dl dt .images ul li img:hover {
+                  filter: grayscale(0); }
+
+/*# sourceMappingURL=qiaomu.css.map */
