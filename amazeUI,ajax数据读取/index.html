@@ -1,0 +1,164 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>首页</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+<header data-am-widget="header"
+        class="am-header am-header-default">
+    <div class="am-header-left am-header-nav">
+        <a href="index.html" class="">
+
+            <i class="am-header-icon am-icon-home"></i>
+        </a>
+    </div>
+
+    <h1 class="am-header-title">
+        <a href="#title-link" class="">
+            ITFUN.TV
+        </a>
+    </h1>
+
+    <div class="am-header-right am-header-nav">
+        <a href="category.html" class="">
+
+            <i class="am-header-icon am-icon-bars"></i>
+        </a>
+    </div>
+</header>
+<div data-am-widget="slider" class="am-slider am-slider-a1" data-am-slider='{"directionNav":false}' >
+    <ul class="am-slides">
+        <li>
+            <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg">
+
+        </li>
+        <li>
+            <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg">
+
+        </li>
+        <li>
+            <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg">
+
+        </li>
+        <li>
+            <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg">
+
+        </li>
+    </ul>
+</div>
+
+<div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+    <!--列表标题-->
+    <div class="am-list-news-hd am-cf">
+        <!--带更多链接-->
+        <a href="###" class="">
+            <h2>学校新闻</h2>
+            <span class="am-list-news-more am-fr">更多 &raquo;</span>
+        </a>
+    </div>
+
+    <div class="am-list-news-bd">
+        <ul class="am-list">
+            <!--li列表-->
+        </ul>
+    </div>
+
+
+
+</div>
+<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default "
+     id="">
+    <ul class="am-navbar-nav am-cf am-avg-sm-4">
+        <li >
+            <a href="tel:123456789" class="">
+                <span class="am-icon-home"></span>
+                <span class="am-navbar-label">首页</span>
+            </a>
+        </li>
+        <li data-am-navbar-share>
+            <a href="###" class="">
+                <span class="am-icon-shopping-bag"></span>
+                <span class="am-navbar-label">课程</span>
+            </a>
+        </li>
+        <li data-am-navbar-qrcode>
+            <a href="###" class="">
+                <span class="am-icon-modx"></span>
+                <span class="am-navbar-label">新闻</span>
+            </a>
+        </li>
+        <li >
+            <a href="https://github.com/allmobilize/amazeui" class="">
+                <span class="am-icon-github"></span>
+                <span class="am-navbar-label">ITFUN</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<!--在这里编写你的代码-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+<script>
+    $(function () {
+        $.get("https://www.whphp.com/api",function (data) {
+            console.log(data);
+            $.each(data.school_news,function (key,value) {
+                var html = "<li class='am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left'>" +
+                    "                <div class='am-u-sm-4 am-list-thumb'>" +
+                    "                    <a href='http://www.douban.com/online/11614662/' class=''>" +
+                    "                        <img src=" + value.thumb  + " alt='我很囧，你保重....晒晒旅行中的那些囧！'/>" +
+                    "                    </a>" +
+                    "                </div>" +
+                    "                <div class=' am-u-sm-8 am-list-main'>" +
+                    "                    <h3 class='am-list-item-hd'><a href='http://www.douban.com/online/11614662/' class=''>" + value.title + "</a></h3>" +
+                    "                    <div class='am-list-item-text'>" +value.markdown_html_code+ "</div>" +
+                    "                </div>" +
+                    "            </li>";
+                $(".am-list").append(html)
+            })
+        },"json")
+    })
+</script>
+</body>
+</html>
