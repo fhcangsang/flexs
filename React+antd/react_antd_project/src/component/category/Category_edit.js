@@ -1,25 +1,33 @@
 import React, {Component} from "react";
 import axios from 'axios';
-import { Form, Input, Button } from 'antd';
+import {Form, Input, Button, InputNumber} from 'antd';
 
 
 const FormItem = Form.Item;
 
-class App extends Component {
+class Edit extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            data:props.location.state
+        };
+    }
 
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 // console.log(values);
-                axios.post(`https://movie.lc1017.com/api/admin/v1/advertisement_nodes`,values).then(res=>{
-                    this.props.history.push("/category_home")
+                axios.put(`http://canteen.test/api/admin/categories/${this.state.data.id}`,values).then(res=>{
+                    // console.log(res);
+                    this.props.history.push("/category")
                 })
             }
         });
     };
 
     render() {
+        // console.log(this.state.id)
         const { getFieldDecorator } = this.props.form;
         return (
             <Form onSubmit={this.handleSubmit}>
@@ -30,6 +38,7 @@ class App extends Component {
                 >
                     {getFieldDecorator('name', {
                         rules: [{ required: true, message: 'Please input your 分类!' }],
+                        initialValue:this.state.data.name
                     })(
                         <Input/>
                     )}
@@ -41,8 +50,9 @@ class App extends Component {
                 >
                     {getFieldDecorator('sort', {
                         rules: [{ required: true, message: 'Please input your 排序!' }],
+                        initialValue:this.state.data.sort
                     })(
-                        <Input />
+                        <InputNumber min={1} max={99} />
                     )}
                 </FormItem>
 
@@ -58,5 +68,5 @@ class App extends Component {
     }
 }
 
-const category_add = Form.create()(App);
-export default category_add
+const category_edit = Form.create()(Edit);
+export default category_edit
