@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-
-export default class order extends Component{
+class home extends Component{
     render(){
-        return(
+        return (
             <div>
-                订单管理
+                <h1>我是首页</h1>
             </div>
         )
     }
 }
+
+export default home;

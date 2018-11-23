@@ -1,36 +1,50 @@
-import React, {Component} from "react";
+import React, { Component } from 'react';
 import axios from 'axios';
-import {Form, Input, Button, InputNumber} from 'antd';
-
+import { Form, Input, Button } from 'antd';
 
 const FormItem = Form.Item;
 
-class Add extends Component {
+class  Edit extends Component{
+    constructor(props){
+        super(props);
+        this.state={
+            id:props.location.state,
+            category:{},
+            photo:{}
+        }
+    }
 
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 // console.log(values);
-                axios.post(`http://canteen.test/api/admin/categories`,values).then(res=>{
-                    // console.log(res);
-                    this.props.history.push("/category")
+                axios.put(`https://movie.lc1017.com/api/admin/v1/advertisement_nodes/${this.state.id.id}`,values).then(()=>{
+                    this.props.history.push("/category_home")
                 })
             }
         });
     };
+
+    componentWillMount(){
+        // console.log(this.state.id);
+        this.setState({
+            category:this.state.id
+        })
+    }
 
     render() {
         const { getFieldDecorator } = this.props.form;
         return (
             <Form onSubmit={this.handleSubmit}>
                 <FormItem
-                    label="分类"
+                    label="分类名"
                     labelCol={{ span: 5 }}
                     wrapperCol={{ span: 12 }}
                 >
                     {getFieldDecorator('name', {
-                        rules: [{ required: true, message: 'Please input your 分类!' }],
+                        rules: [{ required: true, message: 'Please input your 分类名!' }],
+                        initialValue:this.state.category.name
                     })(
                         <Input/>
                     )}
@@ -42,11 +56,12 @@ class Add extends Component {
                 >
                     {getFieldDecorator('sort', {
                         rules: [{ required: true, message: 'Please input your 排序!' }],
+                        initialValue:this.state.category.sort
                     })(
-                        <InputNumber min={1} max={99} />
+                        <Input />
                     )}
                 </FormItem>
-
+                
                 <FormItem
                     wrapperCol={{ span: 12, offset: 5 }}
                 >
@@ -59,5 +74,5 @@ class Add extends Component {
     }
 }
 
-const category_add = Form.create()(Add);
-export default category_add
+const category_edit = Form.create()(Edit);
+export default category_edit
