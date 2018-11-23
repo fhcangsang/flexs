@@ -73,7 +73,7 @@ export default class Category extends Component{
     };
 
     products=(res)=>{
-        if(res.products == ''){return <div style={{textAlign:'center',fontSize:20}}>还没有商品哦！</div>}
+        if(res.products == ''){return <div style={{textAlign:'center',fontSize:20,color:'red'}}>还没有商品哦！</div>}
         let name = res.products.map(item =>{
             return <p>{item.name}</p>
         });

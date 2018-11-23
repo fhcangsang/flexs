@@ -2,18 +2,21 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link} from 'react-router-dom'
 import { Table, Divider } from 'antd';
-import { Input } from 'antd';
+import { Input ,} from 'antd';
 import { Button } from 'antd';
 
 export default class Product extends Component{
 
     state = {
+        search_name:'',
+        search_category:'',
         pagination:{
             current:1,
             pageSize:10,
             total:10
         },
         product_list:[],
+        category_list:[],
         columns:[{
             title: '名称',
             dataIndex: 'name',
@@ -80,11 +83,13 @@ export default class Product extends Component{
     };
 
     componentWillMount(){
-        this.init()
+        this.init();
+        this.category()
     }
 
     init(){
-        axios.get(`http://canteen.test/api/admin/products?page=${this.state.pagination.current}`).then(res=>{
+        axios.get(`http://canteen.test/api/admin/products?page=${this.state.pagination.current}
+        &name=${this.state.search_name}&category_id=${this.state.search_category}`).then(res=>{
             // console.log(res.data.products);
             this.setState({
                 product_list:res.data.products.data,
@@ -96,6 +101,16 @@ export default class Product extends Component{
             })
         })
     }
+
+    category(){
+        axios.get("http://canteen.test/api/admin/categories").then(res=>{
+            // console.log(res.data.categories);
+            this.setState({
+                category_list:res.data.categories
+            })
+        })
+    }
+
 
     sortChange=(res,data,index)=>{
         console.log(res,data,index)
@@ -129,12 +144,52 @@ export default class Product extends Component{
         },0)
     };
 
+    search=()=>{
+        let search_name = document.getElementById('search_name').value;
+        this.setState({
+            search_name:search_name,
+            pagination:{
+                current:1,
+                pageSize:this.state.pagination.pageSize,
+                total:this.state.pagination.total
+            }
+        });
+        setTimeout(()=>{
+            this.init()
+        },0)
+    };
+
+    categoryChange=()=>{
+        let search_category = document.getElementById('search_category').value;
+        this.setState({
+            search_category:search_category,
+            pagination:{
+                current:1,
+                pageSize:this.state.pagination.pageSize,
+                total:this.state.pagination.total
+            }
+        });
+        setTimeout(()=>{
+            this.init()
+        },0)
+    };
+
     render(){
+        const category_id = this.state.category_list.map(res=>
+            <option key={res.id} value={res.id}>{res.name}</option>
+        );
+
         return(
             <div>
                 <Link to="/product_add">
-                    <Button type="primary" style={{margin:"10px"}}>新增</Button>
+                    <Button type="primary" style={{margin:"15px",display:'inlineBlock'}}>新增</Button>
                 </Link>
+                <Input id='search_name' style={{margin:"15px",display:'inlineBlock',width:120}} />
+                <select id='search_category' onChange={this.categoryChange} style={{ width: 120,height:30,padding:4,borderRadius:5}}>
+                    <option value=''>请选择</option>
+                    {category_id}
+                </select>
+                <Button type="" style={{margin:"15px",display:'inlineBlock'}} onClick={this.search}>搜索</Button>
                 <Table
                     rowKey="id"
                     columns={this.state.columns}
