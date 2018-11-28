@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='nav_left'>
+    <view class='nav_list {{selectIndex==item.id?"select":""}}' wx:for="{{categories}}" wx:key="{{item.id}}" bindtap='selectCategory' data-id='{{item.id}}'>
+      <view>{{item.name}}</view>
+    </view>
+  </view>
+  <view class='info_right'>
+    <scroll-view scroll-y scroll-with-animation bindscroll="scrolltoupper" scroll-into-view="{{toView}}">
+      <view class='info_list' wx:for="{{categories}}" wx:key="{{item.id}}">
+        <view class='title' id="{{'id' + item.id}}">{{item.name}}</view>
+        <view class='product' wx:for="{{item.products}}" wx:key="{{item.id}}">
+          <view class='photo'>
+            <image src='{{item.photos.image}}'></image>
+          </view>
+          <view class='product_info'>
+            <view>{{item.name}}</view>
+            <view class='price'>{{item.price}}</view>
+          </view>
+          <view class='product_add' bindtap='product_add' data-id='{{item.id}}'>+</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
