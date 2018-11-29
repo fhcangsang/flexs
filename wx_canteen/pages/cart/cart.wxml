@@ -1,0 +1,23 @@
+<!--pages/cart/cart.wxml-->
+<view class='refresh' wx:if="{{refresh}}">
+<image src='../images/refresh1.gif'></image>
+</view>
+<view class='content'>
+  <view class='cart_list' wx:for='{{carts}}' wx:key='{{item.id}}' wx:if="{{carts.length > 0 }}">
+    <view class='cart_list_name'>{{item.product.name}}</view>
+    <view class='cartNUM'>
+      <view class='cart_price'>￥ {{item.product.price}}</view>
+      <view class='cart_dec changeNum' bindtap='changNum' data-id='{{item.id}}'>-</view>
+      <view>{{item.num}}</view>
+      <view class='cart_add changeNum' bindtap='changNum' data-type='add' data-id='{{item.id}}'>+</view>
+    </view>
+  </view>
+  <view class='erro' wx:if="{{carts.length == 0}}">
+    购物车还没东西哦！！
+    <view>请下拉刷新或去添加商品！</view>
+  </view>
+  <view class='goToPay'>
+    <view class='all_price'>应付合计 ￥{{count.total_price}}</view>
+    <view class='btn'>去结算</view>
+  </view>
+</view>

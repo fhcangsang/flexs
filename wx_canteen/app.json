@@ -1,0 +1,47 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/order/order",
+    "pages/cart/cart",
+    "pages/my/my"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#1f99b0",
+    "navigationBarTitleText": "我的小卖部",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh":true
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#1f99b0",
+    "borderStyle": "#999",
+    "backgroundColor":"#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "selectedIconPath": "pages/images/coffeeS.png",
+        "iconPath": "pages/images/coffee.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "selectedIconPath": "pages/images/orderS.png",
+        "iconPath": "pages/images/order.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "selectedIconPath": "pages/images/cartS.png",
+        "iconPath": "pages/images/cart.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "selectedIconPath": "pages/images/myS.png",
+        "iconPath": "pages/images/my.png"
+      }
+    ]
+  }
+}

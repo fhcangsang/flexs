@@ -1,0 +1,63 @@
+/* pages/cart/cart.wxss */
+.content{
+  background-color: rgb(250, 246, 246);
+  height: 100%;
+}
+.cart_list{
+  display: flex;
+  background-color: #fff;
+  padding: 10px;
+  border-bottom: 1px solid rgb(250, 246, 246);
+}
+.cart_list_name{
+  padding: 0 10px;
+}
+.cartNUM{
+  display: flex;
+  position: absolute;
+  right: 10px;
+}
+.cart_price{
+  color: red;
+  padding: 0 10px;
+}
+.changeNum{
+  margin: 0 5px;
+  font-size: 25px;
+  border-radius: 50%; 
+  background-color: rgb(141, 245, 222);
+  width: 22px;
+  height: 22px;
+  text-align: center;
+  line-height: 22px;
+}
+.goToPay{
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  border-top: 1px solid rgb(245, 242, 242);
+  background-color: #fff;
+}
+.goToPay .all_price{
+  flex: 2;
+  padding: 10px 5px;
+  color: red;
+}
+.goToPay .btn{
+  flex: 1;
+  background-color: rgb(153, 226, 248);
+  text-align: center;
+  padding: 10px 0;
+}
+.erro{
+  font-size: 30px;
+  text-align: center;
+}
+.refresh{
+  text-align: center;
+}
+.refresh image{
+  width: 60rpx;
+  height: 60rpx;
+}
