@@ -1,1 +1,52 @@
 /* pages/order/order.wxss */
+.header{
+  display: flex;
+}
+.header view{
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+}
+/* 动画边框 */
+.border_style{
+  background-color: rgb(126, 208, 240);
+  width: 150rpx;
+  height: 5px;
+  border-radius: 2px;
+  position: relative;
+}
+.border_left1{
+  left:50rpx;
+}
+.border_left2{
+  left:300rpx;
+}
+.border_left3{
+  left:550rpx;
+}
+.border_style1{
+  animation: move1 0.3s linear forwards;
+}
+@keyframes move1{
+  to {left: 50rpx;}
+}
+.border_style2{
+  animation: move2 0.3s linear forwards;
+}
+@keyframes move2{
+  to {left: 286rpx;width: 180rpx;}
+}
+.border_style3{
+  animation: move3 0.3s linear forwards;
+}
+@keyframes move3{
+  to {left: 536rpx;width: 180rpx;}
+}
+/* 动画边框 */
+
+.order_info view{
+  display: none;
+}
+.order_info .order_display{
+  display: block;
+}

@@ -5,7 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    access_token:''
+    access_token:'',
+    order_index: "1",
+    border_style: "border_style1",
+    border_left: "border_left1"
   },
 
   /**
@@ -15,6 +18,40 @@ Page({
     wx.setNavigationBarTitle({
       title: '我的订单'
     })
+  },
+  all_order(even){
+    console.log(even.currentTarget.dataset.index)
+    this.setData({
+      order_index: even.currentTarget.dataset.index,
+      border_style: "border_style1"
+    })
+    setTimeout(()=>{
+      this.setData({
+        border_left: "border_left1"
+      })
+    },350)
+  },
+  unfinished(even){
+    this.setData({
+      order_index: even.currentTarget.dataset.index,
+      border_style: "border_style2"
+    })
+    setTimeout(() => {
+      this.setData({
+        border_left: "border_left2"
+      })
+    }, 350)
+  },
+  finished(even){
+    this.setData({
+      order_index: even.currentTarget.dataset.index,
+      border_style: "border_style3"
+    })
+    setTimeout(() => {
+      this.setData({
+        border_left: "border_left3"
+      })
+    }, 350)
   },
 
   /**

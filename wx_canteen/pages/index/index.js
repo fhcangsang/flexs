@@ -14,19 +14,39 @@ Page({
   //事件处理函数
   onLoad: function () {
     this.login()
-    this.init()
-    this.cart_num()
   },
   login(){
     wx.login({
-      success(res) {
-        console.log(res)
+      success :(res)=>{
+        // console.log(res.code)
+        wx.request({
+          url: 'https://canteen.holyzq.com/api/auth',
+          data: {code:res.code},
+          method: 'POST',
+          dataType: 'json',
+          responseType: 'text',
+          success: (res)=>{
+            // console.log(res.data.token)
+            this.init(res.data.token)
+            this.cart_num(res.data.token)
+            wx.setStorage({
+              key: "token",
+              data: res.data.token
+            })
+          },
+          fail: function(res) {
+            console.log(res)
+          }
+        })
       }
     })
   },
-  init(){
+  init(token){
     wx.request({
       url: 'https://canteen.holyzq.com/api/admin/categories',
+      header:{
+        'Authorization':'Bearer' + " " + token
+      },
       method: 'GET',
       dataType: 'json',
       responseType: 'text',
@@ -36,13 +56,17 @@ Page({
           categories: res.data.categories
         })
       },
-      fail: function (res) { },
-      complete: function (res) { },
+      fail: function (res) {
+        console.log(res)
+      }
     })
   },
-  cart_num(){
+  cart_num(token){
     wx.request({
       url: 'https://canteen.holyzq.com/api/carts',
+      header: {
+        'Authorization': 'Bearer' + " " + token
+      },
       method: 'GET',
       dataType: 'json',
       responseType: 'text',
@@ -94,15 +118,19 @@ Page({
   },
   product_add(even){
     // console.log(even.currentTarget.dataset.id)
+    let token = wx.getStorageSync('token')
     wx.request({
       url: 'https://canteen.holyzq.com/api/carts',
+      header: {
+        'Authorization': 'Bearer' + " " + token
+      },
       data: { product_id: even.currentTarget.dataset.id},
       method: 'POST',
       dataType: 'json',
       responseType: 'text',
       success: (res) => {
         // console.log(res)
-        this.cart_num()
+        this.cart_num(token)
       },
       fail: function (res) { },
       complete: function (res) { },

@@ -20,8 +20,12 @@ Page({
     })
   },
   init() {
+    let token = wx.getStorageSync('token')
     wx.request({
       url: 'https://canteen.holyzq.com/api/carts',
+      header: {
+        'Authorization': 'Bearer' + " " + token
+      },
       method: 'GET',
       dataType: 'json',
       responseType: 'text',
@@ -32,21 +36,25 @@ Page({
           count: res.data.count
         })
       },
-      fail: function(res) {},
-      complete: function(res) {},
+      fail: function(res) {
+        console.log(res)
+      }
     })
   },
   changNum(even) {
     // console.log(even.currentTarget.dataset)
+    let token = wx.getStorageSync('token')
     let id = even.currentTarget.dataset.id
     let type = even.currentTarget.dataset.type
     wx.request({
       url: 'https://canteen.holyzq.com/api/carts',
+      header: {
+        'Authorization': 'Bearer' + " " + token
+      },
       data: {
         id: id,
         type: type
       },
-      header: {},
       method: 'PUT',
       dataType: 'json',
       responseType: 'text',
