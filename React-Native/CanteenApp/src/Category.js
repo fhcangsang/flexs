@@ -24,7 +24,7 @@ export default class Category extends React.Component{
     }
 
     init(){
-        axios.get(`https://canteen.holyzq.com/api/admin/categories`).then(res=>{
+        axios.get(`http://114.67.72.94/api/admin/categories`).then(res=>{
             // console.log(res.data.categories);
             this.setState({
                 category:res.data.categories
@@ -85,6 +85,12 @@ export default class Category extends React.Component{
     };
     //滚动监听；
 
+    //添加商品；
+    product_add=(id)=>{
+        console.log(id);
+    };
+    //添加商品；
+
     render(){
         const category = this.state.category.map(res=>{
             return <Text
@@ -102,7 +108,7 @@ export default class Category extends React.Component{
                                 <Text style={{fontSize:12}}>{item.name}</Text>
                                 <Text style={{color:'red'}}>￥ {item.price}</Text>
                             </View>
-                            <Text style={styleClass.add}>+</Text>
+                            <Text style={styleClass.add} onPress={()=>{this.product_add(item.id)}}>+</Text>
                         </View>
             });
             return <View key={res.id} style={styleClass.product_list}>
