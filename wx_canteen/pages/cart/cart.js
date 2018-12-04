@@ -22,7 +22,7 @@ Page({
   init() {
     let token = wx.getStorageSync('token')
     wx.request({
-      url: 'https://canteen.holyzq.com/api/carts',
+      url: 'http://114.67.72.94/api/carts',
       header: {
         'Authorization': 'Bearer' + " " + token
       },
@@ -50,7 +50,7 @@ Page({
     let id = even.currentTarget.dataset.id
     let type = even.currentTarget.dataset.type
     wx.request({
-      url: 'https://canteen.holyzq.com/api/carts',
+      url: 'http://114.67.72.94/api/carts',
       header: {
         'Authorization': 'Bearer' + " " + token
       },
@@ -90,7 +90,7 @@ Page({
   gopay() {
     let token = wx.getStorageSync('token')
     wx.request({
-      url: 'https://canteen.holyzq.com/api/orders/pay',
+      url: 'http://114.67.72.94/api/orders/pay',
       header: {
         'Authorization': 'Bearer' + " " + token
       },

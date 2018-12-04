@@ -21,7 +21,7 @@ Page({
       success :(res)=>{
         // console.log(res.code)
         wx.request({
-          url: 'https://canteen.holyzq.com/api/auth',
+          url: 'http://114.67.72.94/api/auth',
           data: {code:res.code},
           method: 'POST',
           dataType: 'json',
@@ -43,7 +43,7 @@ Page({
   },
   init(){
     wx.request({
-      url: 'https://canteen.holyzq.com/api/admin/categories',
+      url: 'http://114.67.72.94/api/admin/categories',
       method: 'GET',
       dataType: 'json',
       responseType: 'text',
@@ -60,7 +60,7 @@ Page({
   },
   cart_num(token){
     wx.request({
-      url: 'https://canteen.holyzq.com/api/carts',
+      url: 'http://114.67.72.94/api/carts',
       header: {
         'Authorization': 'Bearer' + " " + token
       },
@@ -117,7 +117,7 @@ Page({
     // console.log(even.currentTarget.dataset.id)
     let token = wx.getStorageSync('token')
     wx.request({
-      url: 'https://canteen.holyzq.com/api/carts',
+      url: 'http://114.67.72.94/api/carts',
       header: {
         'Authorization': 'Bearer' + " " + token
       },

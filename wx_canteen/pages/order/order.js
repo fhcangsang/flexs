@@ -23,7 +23,7 @@ Page({
   init() {
     let token = wx.getStorageSync('token')
     wx.request({
-      url: 'https://canteen.holyzq.com/api/admin/orders',
+      url: 'http://114.67.72.94/api/admin/orders',
       header: {
         'Authorization': 'Bearer' + " " + token
       },
