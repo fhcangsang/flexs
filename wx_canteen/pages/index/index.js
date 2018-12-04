@@ -14,6 +14,7 @@ Page({
   //事件处理函数
   onLoad: function () {
     this.login()
+    this.init()
   },
   login(){
     wx.login({
@@ -27,7 +28,6 @@ Page({
           responseType: 'text',
           success: (res)=>{
             // console.log(res.data.token)
-            this.init(res.data.token)
             this.cart_num(res.data.token)
             wx.setStorage({
               key: "token",
@@ -41,12 +41,9 @@ Page({
       }
     })
   },
-  init(token){
+  init(){
     wx.request({
       url: 'https://canteen.holyzq.com/api/admin/categories',
-      header:{
-        'Authorization':'Bearer' + " " + token
-      },
       method: 'GET',
       dataType: 'json',
       responseType: 'text',
@@ -97,7 +94,7 @@ Page({
     })
     let scroll = []
     for (let i = 0; i < products.length; i++) {
-      let b = products[i] * 76 + 11
+      let b = products[i] * 66 + 20
       scroll.push(b)
     }
     for (let i = 1; i < scroll.length; i++) {
@@ -146,5 +143,14 @@ Page({
       index: 2,
       text: num
     })
+  },
+  onPullDownRefresh:function(){
+    this.init()
+    setTimeout(() => {
+      wx.stopPullDownRefresh({
+        success: () => {
+        }
+      })
+    }, 300)
   }
 })

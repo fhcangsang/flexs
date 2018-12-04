@@ -7,7 +7,7 @@ Page({
   data: {
     carts: [],
     count: {},
-    refresh:false
+    refresh: false
   },
 
   /**
@@ -35,6 +35,9 @@ Page({
           carts: res.data.carts,
           count: res.data.count
         })
+        setTimeout(()=>{
+          this.cart_style()
+        },0)
       },
       fail: function(res) {
         console.log(res)
@@ -84,6 +87,37 @@ Page({
       })
     }
   },
+  gopay() {
+    let token = wx.getStorageSync('token')
+    wx.request({
+      url: 'https://canteen.holyzq.com/api/orders/pay',
+      header: {
+        'Authorization': 'Bearer' + " " + token
+      },
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: (res)=>{
+        console.log(res)
+        let that = this
+        wx.requestPayment({
+          timeStamp: res.data.timestamp,
+          nonceStr: res.data.nonceStr,
+          package: res.data.package,
+          signType: res.data.signType,
+          paySign: res.data.paySign,
+          success: (res) => {
+            console.log(res)
+            that.init()
+          },
+          fail: (res) => {
+            that.init()
+            console.log("咋取消了呢")
+          }
+        })
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -96,7 +130,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    this.init()
   },
 
   /**
@@ -119,17 +153,17 @@ Page({
   onPullDownRefresh: function() {
     this.init()
     this.setData({
-      refresh:true
+      refresh: true
     })
-    setTimeout(()=>{
+    setTimeout(() => {
       wx.stopPullDownRefresh({
-        success:()=>{
+        success: () => {
           this.setData({
             refresh: false
           })
         }
       })
-    },500)
+    }, 300)
   },
 
   /**

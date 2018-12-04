@@ -5,7 +5,11 @@
 .header view{
   flex: 1;
   text-align: center;
-  padding: 10px 0;
+  margin: 10px 0;
+}
+.unfinished{
+  border-left: 1px solid rgb(224, 223, 223);
+  border-right: 1px solid rgb(224, 223, 223);
 }
 /* 动画边框 */
 .border_style{
@@ -46,6 +50,7 @@
 
 .order_info view{
   display: none;
+  margin-top: 15px;
 }
 .order_info .order_display{
   display: block;

@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    access_token:'',
+    access_token: '',
     order_index: "1",
     border_style: "border_style1",
     border_left: "border_left1"
@@ -14,24 +14,41 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     wx.setNavigationBarTitle({
       title: '我的订单'
     })
+    this.init()
   },
-  all_order(even){
-    console.log(even.currentTarget.dataset.index)
+  init() {
+    let token = wx.getStorageSync('token')
+    wx.request({
+      url: 'https://canteen.holyzq.com/api/admin/orders',
+      header: {
+        'Authorization': 'Bearer' + " " + token
+      },
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: function(res) {
+        console.log(res)
+      },
+      fail: function(res) {}
+    })
+  },
+  all_order(even) {
+    // console.log(even.currentTarget.dataset.index)
     this.setData({
       order_index: even.currentTarget.dataset.index,
       border_style: "border_style1"
     })
-    setTimeout(()=>{
+    setTimeout(() => {
       this.setData({
         border_left: "border_left1"
       })
-    },350)
+    }, 350)
   },
-  unfinished(even){
+  unfinished(even) {
     this.setData({
       order_index: even.currentTarget.dataset.index,
       border_style: "border_style2"
@@ -42,7 +59,7 @@ Page({
       })
     }, 350)
   },
-  finished(even){
+  finished(even) {
     this.setData({
       order_index: even.currentTarget.dataset.index,
       border_style: "border_style3"
@@ -57,49 +74,49 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

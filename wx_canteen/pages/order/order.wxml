@@ -1,7 +1,7 @@
 <!--pages/order/order.wxml-->
 <view class='header'>
   <view class='' bindtap='all_order' data-index='1'>全部订单</view>
-  <view class='' bindtap='unfinished' data-index='2'>未完成订单</view>
+  <view class='unfinished' bindtap='unfinished' data-index='2'>未完成订单</view>
   <view class='' bindtap='finished' data-index='3'>已完成订单</view>
 </view>
 <view class='border_style {{border_style}} {{border_left}}'></view>

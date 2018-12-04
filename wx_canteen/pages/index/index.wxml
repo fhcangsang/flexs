@@ -1,4 +1,7 @@
 <!--index.wxml-->
+<view class='load' wx:if="{{categories.length == 0}}">
+  <image src='../images/refresh1.gif'></image>
+</view>
 <view class="container">
   <view class='nav_left'>
     <view class='nav_list {{selectIndex==item.id?"select":""}}' wx:for="{{categories}}" wx:key="{{item.id}}" bindtap='selectCategory' data-id='{{item.id}}'>

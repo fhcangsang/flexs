@@ -1,6 +1,6 @@
 <!--pages/cart/cart.wxml-->
 <view class='refresh' wx:if="{{refresh}}">
-<image src='../images/refresh1.gif'></image>
+  <image src='../images/refresh1.gif'></image>
 </view>
 <view class='content'>
   <view class='cart_list' wx:for='{{carts}}' wx:key='{{item.id}}' wx:if="{{carts.length > 0 }}">
@@ -18,6 +18,6 @@
   </view>
   <view class='goToPay'>
     <view class='all_price'>应付合计 ￥{{count.total_price}}</view>
-    <view class='btn'>去结算</view>
+    <view class='btn' bindtap='gopay'>去结算</view>
   </view>
 </view>
