@@ -8,7 +8,8 @@ Page({
     access_token: '',
     order_index: "1",
     border_style: "border_style1",
-    border_left: "border_left1"
+    border_left: "border_left1",
+    orders:[]
   },
 
   /**
@@ -30,8 +31,11 @@ Page({
       method: 'GET',
       dataType: 'json',
       responseType: 'text',
-      success: function(res) {
-        console.log(res)
+      success: (res)=>{
+        console.log(res.data.orders)
+        this.setData({
+          orders:res.data.orders
+        })
       },
       fail: function(res) {}
     })

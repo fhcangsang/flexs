@@ -7,7 +7,7 @@
   text-align: center;
   margin: 10px 0;
 }
-.unfinished{
+.header .unfinished{
   border-left: 1px solid rgb(224, 223, 223);
   border-right: 1px solid rgb(224, 223, 223);
 }
@@ -48,10 +48,16 @@
 }
 /* 动画边框 */
 
-.order_info view{
+.order_info > view{
   display: none;
   margin-top: 15px;
 }
 .order_info .order_display{
   display: block;
+}
+.finished{
+  color:green;
+}
+.total_order_list .unfinished{
+  color:red;
 }
